@@ -1,0 +1,142 @@
+@import url("https://fonts.googleapis.com/css?family=Great+Vibes");
+
+@import url("https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap");
+
+.site-logo {
+    text-align: center;
+    font-family: 'Great Vibes';
+}
+
+.navbar-brand {
+    border: none;
+}
+
+.nav-item:hover .nav-link {
+    color: pink;
+}
+
+nav {
+    background-color: white;
+}
+
+.row {
+    --bs-gutter-x: 0rem;
+}
+
+.carousel-caption {
+    text-shadow: 1px 1px 1px rgb(241, 51, 83);
+    color: rgb(245, 190, 200);
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.carousel-caption .h1 {
+    font-size: 6vw;
+    font-family: 'Great Vibes';
+}
+
+.carousel-caption .h2 {
+    font-size: 3vw;
+}
+
+.carousel-inner img {
+    opacity: 0.7;
+}
+
+
+.invitation-box {
+    border: 4px solid rgb(249, 134, 154);
+    height: calc(100% - 58px);
+}
+
+.invitation-box h2 {
+    font-family: 'Great Vibes';
+}
+
+.invitation-box h3 {
+    font-family: 'Cambria', 'Cochin', Georgia, Times, 'Times New Roman', serif;
+    font-weight: bold;
+}
+
+
+.font-family {
+    font-family: 'Great Vibes';
+}
+
+.container {
+    margin: 0 auto;
+}
+
+#today {
+    background-color: rgb(250, 145, 162);
+    color: white;
+    text-align: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+.count-down-clock {
+    color: rgb(250, 125, 146);
+    font-size: 120%;
+    display: flex;
+    justify-content: center;
+}
+
+
+.couple-section ul{
+    list-style: none;
+    padding: 0;
+}
+
+.couple-section ul li {
+    display: inline-block;
+}
+
+.section-accessibilities .btn {
+    background-color: rgb(238, 142, 158);
+    border: 1px solid rgb(238, 142, 158);
+}
+
+.section-accessibilities .btn:hover {
+    background-color: rgb(236, 116, 136);
+    border: 1px solid rgb(236, 116, 136);
+}
+
+.event-section {
+    width: 100%;
+    height:70vh;
+    color: rgb(0, 0, 0);
+
+}
+
+.card {
+    background-image: url("../img/bg.png");
+    color: black;
+}
+
+.wedding h3 {
+    font-family: 'Yeseva+One&display=swap';
+}
+
+.wedding-event {
+    color: white;
+    background: url("../img/Album_nen/anh_sn3.jpg");
+    background-color: #F2EDED!important;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: local;
+}
+
+.contact-section {
+    background-color: #F2EDED!important;
+}
+
+.contact-section .wish-form {
+    border: 6px double pink;
+}
+
+.contact-section .wish-box {
+    border: 6px solid pink;
+    height: calc(100%);
+}
