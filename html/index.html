@@ -4,70 +4,168 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Birthday day & Uyên Nhi</title>
-    <link rel="stylesheet" href="../bootstrap-5.2.3-dist/css/bootstrap-grid.min.css">
-    <link rel="stylesheet" href="../bootstrap-5.2.3-dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../fontawesome-free-6.4.2-web/css/all.min.css">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
     <style>
         @import url("https://fonts.googleapis.com/css?family=Great+Vibes");
         @import url("https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap");
+
         body {
-            background-image: url("../img/Album_nen/anh_nen6.jpg");
+            background-image: url("../img/Album_nen/anh_nen6.jpg"); 
+            
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
-        .login {
-            background-color: rgba(253, 156, 173,0.7);
-            border-radius: 10px;
-            font-size: 30px;
+        
+        .great-vibes-font {
+            font-family: 'Great Vibes', cursive;
         }
-        h1 {
-            color: rgb(238, 142, 158);
+
+        @keyframes title-breathe {
+            0%, 100% { 
+                transform: scale(1); 
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); 
+            }
+            50% { 
+                transform: scale(1.03); 
+                text-shadow: 2px 2px 10px rgba(236, 72, 153, 0.5); 
+            }
+        }
+        .title-style {
+            color: #ee8e9e;
             text-align: center;
-            font-family: 'Great Vibes';
+            animation: title-breathe 3s infinite ease-in-out; 
         }
-        label, #emailHelp, .btn {
-            font-family: 'Great Vibes';
+        
+        @keyframes card-glow {
+            0%, 100% { 
+                box-shadow: 0 0 20px rgba(255, 255, 255, 0.2), 0 0 30px rgba(236, 72, 153, 0.3); 
+            }
+            50% { 
+                box-shadow: 0 0 35px rgba(255, 255, 255, 0.4), 0 0 45px rgba(236, 72, 153, 0.5); 
+            }
         }
+        .login-card {
+            background-color: rgba(253, 156, 173, 0.85);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            animation: card-glow 4s infinite ease-in-out;
+        }
+
+        @keyframes gentle-bounce {
+            0%, 100% { 
+                transform: translateY(0) scale(1.05);
+            }
+            50% { 
+                transform: translateY(-8px) scale(1.1);
+            }
+        }
+        .animated-button {
+            animation: gentle-bounce 2.5s infinite ease-in-out;
+        }
+
+
+        #falling-icons {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none; 
+            z-index: 50;
+            overflow: hidden;
+        }
+        .falling-icon {
+            position: absolute;
+            top: -10vh;
+            animation: fall linear forwards;
+            text-shadow: 0 0 5px rgba(0,0,0,0.5);
+            user-select: none;
+        }
+        @keyframes fall {
+            0% { transform: translateY(-10vh) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(110vh) rotate(360deg); opacity: 0; }
+        }
+
         @media (max-width: 768px) {
             body {
-                background: url("../img/Album_nen/anh_nen6.jpg");
-                background-size: contain;
+                background-size: contain; 
+                background-attachment: scroll;
             }
         }
     </style>
 </head>
-<body>
-    <div class="container">
-        <div class="row">
-            <div class="col-12 my-2">
-                <h1 >Hpppy Birthday</h1>
-                <h1 >Trần Hoàng Uyên Nhi</h1>
+<body class="p-4">
+
+    <div id="falling-icons"></div>
+
+    <div class="container mx-auto p-4 md:p-8 relative z-10">
+        <div class="flex flex-col items-center">
+            <div class="mb-6">
+                <h1 class="text-6xl md:text-8xl title-style great-vibes-font font-bold mb-2">Happy Birthday</h1>
+                <h1 class="text-5xl md:text-7xl title-style great-vibes-font font-bold">Trần Hoàng Uyên Nhi</h1>
             </div>
         </div>
-        <div class="row">
-            <div class="col-1 col-md-2"></div>
-            <div class="col-10 col-md-8 d-flex justify-content-center text-center m-5">
-                <div class="login p-5 w-100">
-                    <div class="mb-3 px-2">
-                      <label for="exampleInputEmail1" class="form-label">Nhập mã vào đây</label>
-                      <input type="text" class="form-control" id="ma" >
-                      <div id="emailHelp" class="form-text">Nhập đại đi đừng ngại</div>
+
+        <div class="flex justify-center">
+            <div class="w-full max-w-lg">
+                <div class="login-card p-8 rounded-xl border border-pink-300">
+                    <div class="mb-6 px-2">
+                        <label for="ma" class="form-label text-white text-3xl great-vibes-font mb-2 block">Nhập mã vào đây</label>
+                        <input type="text" class="form-control w-full p-3 rounded-lg border-2 border-pink-400 focus:border-pink-600 focus:ring-2 focus:ring-pink-600 transition duration-300 text-xl" id="ma" placeholder="Ví dụ: 22/02/2026">
+                        <div id="emailHelp" class="form-text text-white/90 text-xl great-vibes-font mt-2">Nhập đại đi đừng ngại 😉</div>
                     </div>
-                    <button type="submit" class="btn btn-info text-bg-primary" onclick="checkCode()">Chọn đây nè</button>
+                    
+                    <button type="submit" class="w-full btn bg-pink-600 hover:bg-pink-700 text-white font-semibold py-3 rounded-full text-2xl great-vibes-font shadow-lg transform transition duration-300 hover:scale-105 active:scale-95 animated-button" onclick="checkCode()">
+                        Chọn đây nè <i class="fas fa-heart"></i>
+                    </button>
                 </div>
-                  <script>
-                    function checkCode() {
-                        var inputCode = document.getElementById("ma").value;
-                        var correctCode = "22/02/2025"; // Đổi thành mã mong muốn
-            
-                        if (inputCode === correctCode) {
-                            window.location.href = "birthday.html"; // Chuyển trang
-                        } else {
-                            alert("Sai sai ở đâu đó òi!!!");
-                        }
-                    }
-                </script>
             </div>
-            <div class="col-1 col-md-2"></div>
         </div>
     </div>
+
+    <script>
+        function checkCode() {
+            var inputCode = document.getElementById("ma").value.trim();
+            var correctCode = "22/02/2026";
+            if (inputCode === correctCode) {
+                window.location.href = "birthday.html"; 
+            } else {
+                alert("Sai sai ở đâu đó òi!!!");
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            const container = document.getElementById("falling-icons");
+            const icons = ["🌸", "💖", "✨", "🎉", "🎂"]; 
+
+            function createIcon() {
+                const icon = document.createElement("div"); 
+                icon.classList.add("falling-icon");
+                icon.innerText = icons[Math.floor(Math.random() * icons.length)];
+                
+                icon.style.left = Math.random() * 100 + "vw";
+                const duration = (Math.random() * 5 + 7) + "s";
+                icon.style.animationDuration = duration;
+                icon.style.animationDelay = (Math.random() * 5) + "s";
+                icon.style.fontSize = (Math.random() * 1.5 + 0.5) + "rem";
+
+                
+                container.appendChild(icon);
+                setTimeout(() => {
+                    icon.remove();
+                }, (parseFloat(duration) + parseFloat(icon.style.animationDelay)) * 1000);
+            }
+            setInterval(createIcon, 300);
+        });
+    </script>
 </body>
 </html>

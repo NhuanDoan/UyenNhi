@@ -1,0 +1,94 @@
+ /* Tải Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Lato:wght@300;400;700&display=swap');
+
+/* Áp dụng font */
+.font-great-vibes { font-family: 'Great Vibes', cursive; }
+body { font-family: 'Lato', sans-serif; background-color: #fdf2f8; } /* Đổi nền thành Pink-50 */
+
+/* --- SỬA LỖI NAV CHE TIÊU ĐỀ --- */
+html {
+    /* Báo trình duyệt chừa ra 135px khi cuộn tới 1 anchor link */
+    scroll-padding-top: 135px;
+}
+
+/* --- CSS CHO PRELOADER --- */
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.5s ease-out;
+}
+.cake-icon {
+    font-size: 3rem;
+    color: #f472b6;
+    animation: bounce 1.5s infinite ease-in-out;
+    margin: 0 0.5rem;
+}
+.cake-icon:nth-child(2) { animation-delay: 0.1s; }
+.cake-icon:nth-child(3) { animation-delay: 0.2s; }
+.cake-icon:nth-child(4) { animation-delay: 0.3s; }
+@keyframes bounce {
+    0%, 80%, 100% { transform: scale(0.9); }
+    40% { transform: scale(1.2); }
+}
+
+/* --- CSS CHO CAROUSEL (SLIDER) --- */
+.carousel-slider {
+    transition: transform 0.5s ease-in-out;
+}
+
+/* --- CSS Lịch --- */
+#today {
+    background-color: #ec4899;
+    color: white;
+    border-radius: 9999px;
+    width: 2.5rem;
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    font-weight: bold;
+}
+
+/* --- CSS CHO HIỆU ỨNG RƠI --- */
+#falling-icons {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 100;
+    overflow: hidden;
+}
+.falling-icon {
+    position: absolute;
+    top: -10vh;
+    animation: fall linear forwards;
+    user-select: none;
+    font-size: 1.5rem;
+    text-shadow: 0 0 5px rgba(0,0,0,0.3);
+}
+@keyframes fall {
+    0% { transform: translateY(-10vh) rotate(0deg); opacity: 1; }
+    100% { transform: translateY(110vh) rotate(360deg); opacity: 0; }
+}
+
+/* --- CSS MỚI: HIỆU ỨNG FADE-IN KHI CUỘN --- */
+.fade-in-section {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.fade-in-section.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
